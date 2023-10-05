@@ -22,8 +22,14 @@ return new class extends Migration
             $table->string('department')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->enum('status',['registered','unregistered'])->default('unregistered');
-            $table->enum('role',['student','teacher'])->default('student');
+            $table->boolean('status')->default(false);//add status boolean users: 0=>unregistered,1=>registered,
+            $table->boolean('role')->default(false);//add role boolean users: 0=>teacher,1=>student,
+            $table->text('state')->nullable();
+            $table->text('Zip')->nullable();
+            $table->text('country')->nullable();
+            $table->text('course')->nullable();
+            $table->text('dob')->nullable();
+            $table->text('sex')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
